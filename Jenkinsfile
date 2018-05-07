@@ -52,6 +52,7 @@ node('master') {
             sh './dockerBuild.sh'
        }
 
+/*
        stage('Deploy'){
 
          echo 'Push to Repo'
@@ -61,7 +62,7 @@ node('master') {
          sh 'ssh deploy@xxxxx.xxxxx.com running/xxxxxxx/dockerRun.sh'
 
        }
-
+*/
        stage('Cleanup'){
 
          echo 'prune and cleanup'
