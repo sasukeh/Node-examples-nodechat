@@ -70,9 +70,15 @@ node('master') {
          sh 'rm node_modules -rf'
 
        }
-
-
-
+       stage('publish docker image'){
+         when{
+           branch 'master'
+         }
+	steps {
+	  withDockerRegistry([ credentialsId:"e4b95196-c300-4315-8b6a-e7e99813a9f1", url:""])
+		sh 'docker push sasukeh/node-chat:latest'
+	}
+       }
     }
     catch (err) {
 
