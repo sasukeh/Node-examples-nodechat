@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t sasukeh/node-nodechat .
+docker build -t kyoheim/node-nodechat .
