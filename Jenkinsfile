@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-node('node') {
+node('master') {
 
 
     currentBuild.result = "SUCCESS"
@@ -41,7 +41,7 @@ node('node') {
          sh 'node -v'
          sh 'npm prune'
          sh 'npm install'
-#         sh 'npm test'
+//         sh 'npm test'
 
        }
 
