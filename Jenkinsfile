@@ -31,7 +31,9 @@ node('master') {
 
           checkout scm
        }
-
+       stage('checkEnv'){
+       sh 'whoami'
+       }
        stage('Test'){
 
          env.NODE_ENV = "test"
