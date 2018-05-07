@@ -1,6 +1,8 @@
+var appInsights = require('applicationinsights');
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+appInsights.setup('5e87e093-6a6a-404a-a95c-4fcedb7d5414').start();
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
