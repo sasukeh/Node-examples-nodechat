@@ -71,14 +71,10 @@ node('master') {
 
        }
        stage('publish docker image'){
-         when{
-           branch 'master'
-         }
-	 steps {
-	   withDockerRegistry([ credentialsId:"e4b95196-c300-4315-8b6a-e7e99813a9f1", url:""]) {
-	     sh 'docker push sasukeh/node-chat:latest'
-	  }
-        }
+	 withDockerRegistry([credentialsId: 'e4b95196-c300-4315-8b6a-e7e99813a9f1', url: 'https://hub.docker.com']) {
+    	 // some block
+	     sh 'docker push kyoheim/node-chat:latest'
+	 }	
        }
     }
     catch (err) {
